@@ -5,20 +5,21 @@ import os
 import re
 from collections import Counter
 
+NUMBER_OF_MOST_FREQUENT_WORDS = 10
 
 def load_data(filepath):
     with open(os.path.abspath(filepath), encoding="utf8") as f:
-        data = f.read()
-    return data
+        text = f.read()
+    return text
 
 
 def get_most_frequent_words(text):
     words = re.findall("([\w][\w]*'?\w?)", text.lower())
-    return Counter(words).most_common(10)
+    return Counter(words).most_common(NUMBER_OF_MOST_FREQUENT_WORDS)
 
 
 if __name__ == '__main__':
     filepath = input("Путь к текстовому файлу: ")
     text = load_data(filepath)
-    num = get_most_frequent_words(text=text)
-    print(num)
+    most_frequent_words = get_most_frequent_words(text=text)
+    print(most_frequent_words)
