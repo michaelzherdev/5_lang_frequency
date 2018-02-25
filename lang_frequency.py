@@ -1,7 +1,8 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os, re
+import os
+import re
 from collections import Counter
 
 
