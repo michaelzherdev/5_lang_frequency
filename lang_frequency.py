@@ -1,4 +1,3 @@
-import os
 import re
 from sys import argv
 from collections import Counter
@@ -12,7 +11,7 @@ def load_data(filepath):
 
 def get_most_frequent_words(text):
     number_of_most_frequent_words = 10
-    all_words = re.findall("([\w][\w]*'?\w?)", text.lower())
+    all_words = re.findall("[\w]+", text.lower())
     return Counter(all_words).most_common(number_of_most_frequent_words)
 
 
