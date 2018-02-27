@@ -4,8 +4,8 @@ from collections import Counter
 
 
 def load_data(filepath):
-    with open(filepath, encoding="utf8") as f:
-        text = f.read()
+    with open(filepath, encoding="utf8") as file:
+        text = file.read()
     return text
 
 
